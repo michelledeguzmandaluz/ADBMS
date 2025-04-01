@@ -1,4 +1,4 @@
-package MENU;
+package Goldilocks;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,21 +10,22 @@ public class LoginForm extends javax.swing.JFrame {
     }
 private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {                                          
         System.exit(0);
-    }   
-private void jcshow_passwordActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    }                                         
+
+    private void jcshow_passwordActionPerformed(java.awt.event.ActionEvent evt) {                                                
         if(jcshow_password.isSelected()){
             passwordField.setEchoChar((char)0);
         }
         else{
             passwordField.setEchoChar('*');
         }
-    }    
+    }
 private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {                                         
         if(isEmpty()){
             String uname = usernameField.getText();
             String upass = String.valueOf(passwordField.getPassword());
             if(uname.equals("admin")&& upass.equals("2224")){
-                Menu menu = new Menu();
+                MenuReceipt menu = new MenuReceipt();
                 menu.setVisible(true);
                 menu.pack();
                 this.dispose();
@@ -32,7 +33,7 @@ private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
                 JOptionPane.showMessageDialog(null, "Invalid username or  password","Warning",2);    
             }
         }
-    }                                        
+    }    
 private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
            for(double i=0.0; i<=1.0;i +=0.1){
             String s = i+"";
@@ -44,8 +45,7 @@ private void formWindowOpened(java.awt.event.WindowEvent evt) {
                 Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
-    }   
-
+    }  
 int xx,xy;
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {                                     
         int x = evt.getXOnScreen();
@@ -56,9 +56,8 @@ int xx,xy;
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {                                     
         xx = evt.getX();
         xy = evt.getY();
-    }                                    
-    
-    public boolean isEmpty(){
+    }    
+public boolean isEmpty(){
         if(usernameField.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Username is missing","Warning",2);
             return false;
@@ -69,9 +68,8 @@ int xx,xy;
         }
         return true;
     }
-
- public static void main(String args[]) {
-   try {
+public static void main(String args[]) {
+  try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -87,10 +85,9 @@ int xx,xy;
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-java.awt.EventQueue.invokeLater(new Runnable() {
+  java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LoginForm().setVisible(true);
             }
         });
-   }
-}
+    }
