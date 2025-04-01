@@ -1,20 +1,20 @@
-package MENU;
-
+package Goldilocks;
 
 import java.awt.print.PrinterException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Menu extends javax.swing.JFrame {
+public class MenuReceipt extends javax.swing.JFrame {
 
     private double total = 0.0;
     private int x = 0;
     private double tax = 0.0;
 
-    public Menu() {
+    public MenuReceipt() {
         initComponents();
         init();
     }
@@ -30,6 +30,7 @@ public class Menu extends javax.swing.JFrame {
         }
         return true;
     }
+
     public void reset() {
         total = 0.0;
         x = 0;
@@ -70,24 +71,12 @@ public class Menu extends javax.swing.JFrame {
         jCheckBox14.setSelected(false);
         jCheckBox15.setSelected(false);
     }
-  
-  public void dudate() {
+
+    public void dudate() {
         jTextFieldTax.setText(String.valueOf(String.format("%.2f", tax)));
         jTextFieldSubTotal.setText(String.valueOf(String.format("%.2f", total)));
         jTextFieldTotal.setText(String.valueOf(String.format("%.2f", total + tax)));
     }
-
-public void goldilocks() {
-        int purchaseId = 15020 + (int) (Math.random()*80800); 
-        jTextArea.setText("**************************************Goldilocks**************************************\n"
-                + "Time: " + jTxtTime.getText() + "                                                           Date: " + jTxtDate.getText() + "\n"
-                +"Purchase Id: " + purchaseId + "\n" 
-                + "***************************************************************************************\n"
-                + "\nProduct Name: \t\t\t"
-                + "Price(₱): \n\n"
-        );
-    }
-
 private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         int qty = Integer.parseInt(jSpinner1.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox1.isSelected()) {
@@ -103,8 +92,7 @@ private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox1.setSelected(false);
         }
-    }
-
+    }  
 private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         int qty = Integer.parseInt(jSpinner2.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox2.isSelected()) {
@@ -120,8 +108,7 @@ private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox2.setSelected(false);
         }
-    } 
-
+    }                                          
 private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         int qty = Integer.parseInt(jSpinner3.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox3.isSelected()) {
@@ -138,7 +125,6 @@ private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {
             jCheckBox3.setSelected(false);
         }
     } 
-
 private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         int qty = Integer.parseInt(jSpinner11.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox4.isSelected()) {
@@ -155,8 +141,7 @@ private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {
             jCheckBox4.setSelected(false);
         }
     }  
-
-private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+ private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         int qty = Integer.parseInt(jSpinner4.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox5.isSelected()) {
             x++;
@@ -172,7 +157,6 @@ private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {
             jCheckBox5.setSelected(false);
         }
     }  
-
 private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         int qty = Integer.parseInt(jSpinner5.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox6.isSelected()) {
@@ -188,9 +172,8 @@ private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox6.setSelected(false);
         }
-    }  
-
-  private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    }                                          
+private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         int qty = Integer.parseInt(jSpinner12.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox7.isSelected()) {
             x++;
@@ -205,9 +188,8 @@ private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox7.setSelected(false);
         }
-    } 
-
- private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    }   
+private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         int qty = Integer.parseInt(jSpinner6.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox8.isSelected()) {
             x++;
@@ -222,8 +204,7 @@ private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox8.setSelected(false);
         }
-    } 
-
+    }    
 private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         int qty = Integer.parseInt(jSpinner7.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox9.isSelected()) {
@@ -239,8 +220,7 @@ private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox9.setSelected(false);
         }
-    }
-
+    }                                          
 private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         int qty = Integer.parseInt(jSpinner8.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox10.isSelected()) {
@@ -256,8 +236,7 @@ private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox10.setSelected(false);
         }
-    }
-
+    }  
 private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         int qty = Integer.parseInt(jSpinner9.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox11.isSelected()) {
@@ -273,8 +252,7 @@ private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox11.setSelected(false);
         }
-    } 
-
+    }   
 private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         int qty = Integer.parseInt(jSpinner10.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox12.isSelected()) {
@@ -290,8 +268,7 @@ private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox12.setSelected(false);
         }
-    } 
-
+    }    
 private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         int qty = Integer.parseInt(jSpinner13.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox13.isSelected()) {
@@ -307,8 +284,7 @@ private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox13.setSelected(false);
         }
-    }
-
+    }    
 private void jCheckBox14ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         int qty = Integer.parseInt(jSpinner14.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox14.isSelected()) {
@@ -324,8 +300,7 @@ private void jCheckBox14ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox14.setSelected(false);
         }
-    }  
-
+    } 
 private void jCheckBox15ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         int qty = Integer.parseInt(jSpinner15.getValue().toString());
         if (qtyIsZero(qty) && jCheckBox15.isSelected()) {
@@ -341,62 +316,61 @@ private void jCheckBox15ActionPerformed(java.awt.event.ActionEvent evt) {
         } else {
             jCheckBox15.setSelected(false);
         }
-    }
-
+    }  
+private void btnTotalActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        if (total == 0.0) {
+            JOptionPane.showMessageDialog(null, "You haven't selected any product");
+        } else {
+            jTextArea.setText(jTextArea.getText()
+                    + "\n***************************************************************************************************************\n"
+                    + "Tax: \t\t\t" + tax + "\n"
+                    + "SubTotal: \t\t\t" + total + "\n"
+                    + "Total: \t\t\t" + (total + tax) + "\n\n"
+                    + "\n*************************************************Thank You***************************************************\n"
+            );
+            btnTotal.setEnabled(false);
+        }
+    }  
 private void btnReceiptActionPerformed(java.awt.event.ActionEvent evt) {                                           
         if (total != 0) {
             if (!btnTotal.isEnabled()) {
                 try {
                     jTextArea.print();
                 } catch (PrinterException ex) {
-                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MenuReceipt.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }else {
-            JOptionPane.showMessageDialog(null, "First, you should calculate the total price");
-        }
+            } else {
+                JOptionPane.showMessageDialog(null, "First, you should calculate the total price");
+            }
 
         } else {
             JOptionPane.showMessageDialog(null, "You haven't purchased any product");
         }
-    }                                          
-
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        System.exit(0);
-    }                                       
-
-    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    }    
+private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {                                         
         reset();
-    } 
-
-private void btnTotalActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        if (total == 0.0) {
-            JOptionPane.showMessageDialog(null, "You haven't selected any product");
-        } else {
-            jTextArea.setText(jTextArea.getText()
-                    + "\n***************************************************************************************\n"
-                    + "Tax: \t\t\t" + tax + "\n"
-                    + "SubTotal: \t\t\t" + total + "\n"
-                    + "Total: \t\t\t" + (total + tax) + "\n\n"
-                    + "\n************************************Thank You**************************************\n"
-            );
-            btnTotal.setEnabled(false);
-        }
+    }                                        
+    public void goldilocks() {
+        int purchaseId = 15020 + (int) (Math.random() * 80800);
+        jTextArea.setText("**************************************************Goldilocks**************************************************\n"
+                + "Time: " + jTxtTime.getText() + "                                                                                                  Date: " + jTxtDate.getText() + "\n"
+                + "Purchase Id: " + purchaseId + "\n"
+                + "***************************************************************************************************************\n"
+                + "\nProduct Name: \t\t\t"
+                + "Price(₱): \n\n"
+        );
     }
-
-  private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
-        for(double i=0.0; i<=1.0;i +=0.1){
-            String s = i+"";
-            float f = Float.valueOf(s);
-            this.setOpacity(f);
-            try {
-                Thread.sleep(40);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
+private JFrame frame;
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        frame = new JFrame("Exit");
+        if (JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit", "Goldilocks",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            System.exit(0);
         }
+    }    
+private void jbtnNextActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        new Record().setVisible(true);
     } 
-
 public void getTax(int t) {
         if (t > 10.0) {
             tax = 0.5;
@@ -414,15 +388,14 @@ public void getTax(int t) {
             tax = 4.0;
         }
     }
-
-  public void setTime() {
+ public void setTime() {
         new Thread(new Runnable() {
             public void run() {
                 while (true) {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(MenuReceipt.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     Date date = new Date();
                     SimpleDateFormat tf = new SimpleDateFormat("h:mm:ss aa");
@@ -434,29 +407,25 @@ public void getTax(int t) {
             }
         }).start();
     }
-
-public static void main(String args[]) {
-  try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
+        for (double i = 0.0; i <= 1.0; i += 0.1) {
+            String s = i + "";
+            float f = Float.valueOf(s);
+            this.setOpacity(f);
+            try {
+                Thread.sleep(40);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(MenuReceipt.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         }
-  java.awt.EventQueue.invokeLater(new Runnable() {
+    } 
+public static void main(String args[]) {
+    java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new MenuReceipt().setVisible(true);
+
             }
         });
     }
-}
-  
+ }
